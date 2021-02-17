@@ -48,7 +48,7 @@ int main() {
             
         }
         if (count==0){
-            cout << "No rhymes found" << endl;
+            cout << "No rhymes found." << endl;
         
         }
 
@@ -75,8 +75,15 @@ int main() {
     cout.setf(ios::showpoint);
     cout.precision(2);
 
+    if (count ==0){
     cout << "There are " << n << " lines in this poem, so the rhyme-line density is: " << LineDensity <<endl;
+    }
 
+    if (count >0){
+    cout << "There are " << n << " lines in this poem, so the rhyme-line density is: " << LineDensity <<endl;
+    }
+
+    
         iostream.close();
         return 0;
     }
