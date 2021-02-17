@@ -19,7 +19,7 @@ int main() {
     lastWord1 = "";
     int count =0;
 
-    cout << "Enter the filename: ";
+    cout << "Enter filename: ";
     cin >> filename;
     
     ifstream iostream(filename.c_str());
