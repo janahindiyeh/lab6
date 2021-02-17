@@ -62,7 +62,7 @@ int main() {
         }
     }
         else{
-            cerr << "Input file opening failed";
+            cerr << "Input file opening failed.";
             exit(1);
         }
 
@@ -75,7 +75,7 @@ int main() {
     cout.setf(ios::showpoint);
     cout.precision(2);
 
-    cout << "There are " << n << " lines in this poem so the rhyme-line density is: " << LineDensity <<endl;
+    cout << "There are " << n << " lines in this poem, so the rhyme-line density is: " << LineDensity <<endl;
 
         iostream.close();
         return 0;
