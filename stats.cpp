@@ -9,7 +9,7 @@ using namespace std;
 
 double MeanAverage (string filename);
 double StdDev (string filename);
-double Median(string filename);
+double Median(double arr[],int size);
 
 
 int main() 
@@ -44,10 +44,30 @@ int main()
 
       cout << "Mean = " << MeanAverage(filename) << endl;
       
-      cout << "Stddev = " << StdDev(filename) << endl;
 
-   
+    double num;
+    int size(0), i(0);
+   while(in_stream >> num){
+       size++;
+   }
+
    in_stream.close();
+
+   in_stream.open(filename.c_str());
+   //Creates a double array with the 'size'
+   double array[size];
+   //Reads elements from file into the array
+   while(in_stream >> num){
+       array[i] = num;
+       i++;
+   }
+   //Closes the file
+   in_stream.close();
+
+   double median = Median(array,size);
+   cout << "Median = " << fixed << median << endl;
+
+   cout << "Stddev = " << StdDev(filename) << endl;
 
 
    return 0;
@@ -96,5 +116,30 @@ double StdDev (string filename)
    double stdv = sqrt(stdvTop / (count-1));
    return (stdv);
 }
+
+double Median(double arr[],int size){
+   double temp = 0;
+   
+   for(int i = 0;i<size;i++)
+       for(int j = i;j<size;j++){
+           if(arr[i] > arr[j]){                          
+               temp = arr[i];
+               arr[i] = arr[j];
+               arr[j] = temp;
+           }
+       }      
+   
+   int m = size/2;      
+   
+   if(size % 2 == 0){    
+       return (arr[m-1] + arr[m])/2;
+   }
+
+   else{     
+       return arr[m]; 
+   }     
+}
+
+
 
 
