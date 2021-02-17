@@ -47,26 +47,8 @@ int main() {
 
             
         }
-        if (count==0){
-            cout << "No rhymes found." << endl;
-        
-        }
 
-        else if(count==1){
-            cout << "There is 1 pair of rhyming words."<< endl;
-        
-        }
-
-        else{
-            cout << "There are "<<count<<" pairs of rhyming words." << endl;
-        }
-    }
-        else{
-            cerr << "Input file opening failed.";
-            exit(1);
-        }
-
-    int n(0);
+        int n(0);
     n = countLines(filename);
     double LineDensity;
     LineDensity = (double)count/(double)n;
@@ -75,14 +57,27 @@ int main() {
     cout.setf(ios::showpoint);
     cout.precision(2);
 
-    if (count ==0){
-    cout << "There are " << n << " lines in this poem, so the rhyme-line density is: " << LineDensity <<endl;
-    }
+        if (count==0){
+            cout << "No rhymes found." << endl;
+            cout << "There are " << n << " lines in this poem." << endl;
+        
+        }
 
-    if (count >0){
-    cout << "There are " << n << " lines in this poem, so the rhyme-line density is: " << LineDensity <<endl;
-    }
+        else if(count==1){
+            cout << "There is 1 pair of rhyming words."<< endl;
+            cout << "There are " << n << " lines in this poem, so the rhyme-line density is: " << LineDensity <<endl;
+        
+        }
 
+        else{
+            cout << "There are "<<count<<" pairs of rhyming words." << endl;
+            cout << "There are " << n << " lines in this poem, so the rhyme-line density is: " << LineDensity <<endl;
+        }
+    }
+        else{
+            cerr << "Input file opening failed.";
+            exit(1);
+        }
     
         iostream.close();
         return 0;
@@ -91,7 +86,7 @@ int main() {
 
 string LastWord(string line){
 
-       line.erase(line.find_last_not_of(" \t\n\r\f\v") + 1); // removes whitespace characters at the end
+       line.erase(line.find_last_not_of(" ") + 1); // removes whitespace characters at the end
 
        size_t lastWordIndex = line.find_last_of(' ');
        string lastWord = RemovePunct(line.substr(lastWordIndex+1));
