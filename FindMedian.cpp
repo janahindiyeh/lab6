@@ -22,7 +22,7 @@ void FindMedian(string filename, ifstream& ifs){
         exit(1);
     }
 
-    double num;
+    int num;
     int size(0), i(0);
    while(ifs >> num){
        size++;
@@ -65,12 +65,12 @@ void FindMedian(string filename, ifstream& ifs){
    }
 
    else if(size == 1){
-       ofs << (double)arr[m] << endl;
+       ofs << arr[m] << endl;
        
    }
 
    else{     
-       ofs << (double)arr[m] << endl; 
+       ofs << arr[m] << endl; 
        
    }   
     
