@@ -8,13 +8,6 @@ using namespace std;
 
 void FindMedian(string filename, ifstream& ifs);
 
-int main() { 
-ifstream ifs; 
-string fname = "Num.txt"; 
-FindMedian(fname, ifs);
-return 0;
-}
-
 void FindMedian(string filename, ifstream& ifs){
 
     ifs.open(filename);
@@ -64,17 +57,19 @@ void FindMedian(string filename, ifstream& ifs){
    
    if(size % 2 == 0){    
        a = (double)(arr[m-1] + arr[m])/2;
-       ofs << a;
+       ofs << a << endl;
+       cout << a << endl;
 
    }
 
    else if(size == 1){
        ofs << arr[m] << endl;
-       cout << arr[m];
+       cout << arr[m] << endl;
    }
 
    else{     
        ofs << arr[m] << endl; 
+       cout << arr[m] << endl;
    }   
     
 }
