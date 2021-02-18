@@ -8,13 +8,21 @@ using namespace std;
 
 void FindMedian(string filename, ifstream& ifs);
 
+
 void FindMedian(string filename, ifstream& ifs){
 
     ifs.open(filename);
+    if (ifs.fail( )){
+        cout << "Input file opening failed.\n";
+        exit(1);
+    }
 
     ofstream ofs;
     ofs.open("median_output.dat");
-
+    if (ofs.fail( )){
+        cout << "Output file opening failed.\n";
+        exit(1);
+    }
 
     int num;
     int size(0), i(0);
@@ -51,21 +59,21 @@ void FindMedian(string filename, ifstream& ifs){
    if(size % 2 == 0){    
        a = (double)(arr[m-1] + arr[m])/2;
        ofs << a << endl;
-    
+
 
    }
 
    else if(size == 1){
        ofs << arr[m] << endl;
-    
+       
    }
 
    else{     
        ofs << arr[m] << endl; 
-    
+       
    }   
-   ifs.close();
-   ofs.close();
     
+    ifs.close();
+    ofs.close();
 }
 
