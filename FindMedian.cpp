@@ -8,6 +8,12 @@ using namespace std;
 
 void FindMedian(string filename, ifstream& ifs);
 
+int main() { 
+ifstream ifs; 
+string fname = "Num.txt"; 
+FindMedian(fname, ifs);
+return 0;
+}
 
 void FindMedian(string filename, ifstream& ifs){
 
