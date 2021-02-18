@@ -11,17 +11,10 @@ void FindMedian(string filename, ifstream& ifs);
 void FindMedian(string filename, ifstream& ifs){
 
     ifs.open(filename);
-    if (ifs.fail( )){
-        cout << "Input file opening failed.\n";
-        exit(1);
-    }
 
     ofstream ofs;
     ofs.open("median_output.dat");
-    if (ofs.fail( )){
-        cout << "Output file opening failed.\n";
-        exit(1);
-    }
+
 
     int num;
     int size(0), i(0);
